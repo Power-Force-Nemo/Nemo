@@ -1,0 +1,15 @@
+C:\Users\edurand\source\repos\Power-Force-Nemo\Nemo\NEMO\Nemo\Nemo\bin\Debug\Nemo.exe.config
+C:\Users\edurand\source\repos\Power-Force-Nemo\Nemo\NEMO\Nemo\Nemo\bin\Debug\Nemo.exe
+C:\Users\edurand\source\repos\Power-Force-Nemo\Nemo\NEMO\Nemo\Nemo\bin\Debug\Nemo.pdb
+C:\Users\edurand\source\repos\Power-Force-Nemo\Nemo\NEMO\Nemo\Nemo\obj\Debug\Nemo.csproj.AssemblyReference.cache
+C:\Users\edurand\source\repos\Power-Force-Nemo\Nemo\NEMO\Nemo\Nemo\obj\Debug\MainWindow.g.cs
+C:\Users\edurand\source\repos\Power-Force-Nemo\Nemo\NEMO\Nemo\Nemo\obj\Debug\App.g.cs
+C:\Users\edurand\source\repos\Power-Force-Nemo\Nemo\NEMO\Nemo\Nemo\obj\Debug\Nemo_MarkupCompile.cache
+C:\Users\edurand\source\repos\Power-Force-Nemo\Nemo\NEMO\Nemo\Nemo\obj\Debug\Nemo_MarkupCompile.lref
+C:\Users\edurand\source\repos\Power-Force-Nemo\Nemo\NEMO\Nemo\Nemo\obj\Debug\MainWindow.baml
+C:\Users\edurand\source\repos\Power-Force-Nemo\Nemo\NEMO\Nemo\Nemo\obj\Debug\Nemo.g.resources
+C:\Users\edurand\source\repos\Power-Force-Nemo\Nemo\NEMO\Nemo\Nemo\obj\Debug\Nemo.Properties.Resources.resources
+C:\Users\edurand\source\repos\Power-Force-Nemo\Nemo\NEMO\Nemo\Nemo\obj\Debug\Nemo.csproj.GenerateResource.cache
+C:\Users\edurand\source\repos\Power-Force-Nemo\Nemo\NEMO\Nemo\Nemo\obj\Debug\Nemo.csproj.CoreCompileInputs.cache
+C:\Users\edurand\source\repos\Power-Force-Nemo\Nemo\NEMO\Nemo\Nemo\obj\Debug\Nemo.exe
+C:\Users\edurand\source\repos\Power-Force-Nemo\Nemo\NEMO\Nemo\Nemo\obj\Debug\Nemo.pdb
