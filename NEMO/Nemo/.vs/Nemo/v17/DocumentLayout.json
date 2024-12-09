@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\abelin\\Documents\\Nemo\\NEMO\\Nemo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{503E864E-8944-4CA6-A56B-13C168850341}|Nemo\\Nemo.csproj|c:\\users\\abelin\\documents\\nemo\\nemo\\nemo\\nemo\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{503E864E-8944-4CA6-A56B-13C168850341}|Nemo\\Nemo.csproj|solutionrelative:nemo\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{503E864E-8944-4CA6-A56B-13C168850341}|Nemo\\Nemo.csproj|c:\\users\\abelin\\documents\\nemo\\nemo\\nemo\\nemo\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{503E864E-8944-4CA6-A56B-13C168850341}|Nemo\\Nemo.csproj|solutionrelative:nemo\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{503E864E-8944-4CA6-A56B-13C168850341}|Nemo\\Nemo.csproj|c:\\users\\abelin\\documents\\nemo\\nemo\\nemo\\nemo\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{503E864E-8944-4CA6-A56B-13C168850341}|Nemo\\Nemo.csproj|solutionrelative:nemo\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,15 +26,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "employee.cs",
-              "DocumentMoniker": "C:\\Users\\abelin\\Documents\\Nemo\\NEMO\\Nemo\\Nemo\\employee.cs",
-              "RelativeDocumentMoniker": "Nemo\\employee.cs",
-              "ToolTip": "C:\\Users\\abelin\\Documents\\Nemo\\NEMO\\Nemo\\Nemo\\employee.cs",
-              "RelativeToolTip": "Nemo\\employee.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAaAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\abelin\\Documents\\Nemo\\NEMO\\Nemo\\Nemo\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Nemo\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\abelin\\Documents\\Nemo\\NEMO\\Nemo\\Nemo\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Nemo\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAqwCYAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T13:45:06.108Z",
+              "WhenOpened": "2024-12-09T14:16:12.468Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\abelin\\Documents\\Nemo\\NEMO\\Nemo\\Nemo\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Nemo\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\abelin\\Documents\\Nemo\\NEMO\\Nemo\\Nemo\\MainWindow.xaml",
+              "RelativeToolTip": "Nemo\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-09T14:11:38.308Z",
               "EditorCaption": ""
             }
           ]

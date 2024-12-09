@@ -5,8 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Nemo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="560" Width="732">
     <Grid>
-        
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="710">
+            <TabItem Header="Employee">
+                <Grid Background="#FFE5E5E5" VerticalAlignment="Top" Height="500">
+                    <DataGrid x:Name="dtgEmp" HorizontalAlignment="Left" VerticalAlignment="Top" Height="450" Width="255" AutoGenerateColumns="True" ItemsSource="{Binding}" SelectionChanged="dtgEmp_SelectionChanged"/>
+                    <TextBox x:Name="txtNumEmp" HorizontalAlignment="Left" Height="23" Margin="346,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" FontSize="14.667" FontWeight="Bold" IsEnabled="False"/>
+                    <Label x:Name="labelNumPigiste" Content="N° Employe" HorizontalAlignment="Left" Margin="346,15,0,0" VerticalAlignment="Top" Width="150"/>
+                    <TextBox x:Name="txtNomEmp" HorizontalAlignment="Left" Height="23" Margin="346,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBox x:Name="txtPrenomEmp" HorizontalAlignment="Left" Height="23" Margin="346,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <Label x:Name="lblNomPigiste" Content="Nom" HorizontalAlignment="Left" Margin="346,65,0,0" VerticalAlignment="Top" Width="150"/>
+                    <Label x:Name="lblPrenomPigiste" Content="Prénom" HorizontalAlignment="Left" Margin="346,119,0,0" VerticalAlignment="Top" Width="150"/>
+                    <TextBox x:Name="txtTelEmp" HorizontalAlignment="Left" Height="23" Margin="544,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <Label x:Name="lblCPPigiste" Content="Telephone" HorizontalAlignment="Left" Margin="545,65,0,0" VerticalAlignment="Top" Width="150"/>
+                    <Label x:Name="lblVillePigiste" Content="Type" HorizontalAlignment="Left" Margin="545,119,0,0" VerticalAlignment="Top" Width="150"/>
+                    <TextBox x:Name="txtMailEmp" HorizontalAlignment="Left" Height="23" Margin="544,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <Label x:Name="lblAdressePigiste" Content="Mail" HorizontalAlignment="Left" Margin="545,15,0,0" VerticalAlignment="Top" Width="150"/>
+                    <Button x:Name="btnModifierEmp" Content="Modifier" HorizontalAlignment="Left" Margin="540,296,0,0" VerticalAlignment="Top" Width="155" Click="btnModifierEmp_Click"/>
+                    <Button x:Name="btnAjouterEmp" Content="Ajouter" HorizontalAlignment="Left" Margin="540,272,0,0" VerticalAlignment="Top" Width="155" Click="btnAjouterEmp_Click"/>
+                    <Button x:Name="btnSupprimerEmp" Content="Supprimer" HorizontalAlignment="Left" Margin="540,321,0,0" VerticalAlignment="Top" Width="155" Height="20" Click="btnSupprimerEmp_Click"/>
+                    <ComboBox x:Name="cboTypeEmp" SelectedValuePath="IdEmp" HorizontalAlignment="Left" Margin="544,146,0,0" VerticalAlignment="Top" Width="150"/>
+                </Grid>
+            </TabItem>
+
+
+        </TabControl>
     </Grid>
 </Window>
