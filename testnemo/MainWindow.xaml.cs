@@ -18,6 +18,7 @@ namespace testnemo
     {
         public MainWindow()
         {
+            testnewpush;
             InitializeComponent();
         }
     }
