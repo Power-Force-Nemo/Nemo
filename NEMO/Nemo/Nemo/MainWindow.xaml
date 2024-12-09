@@ -25,7 +25,13 @@
                     <Button x:Name="btnModifierEmp" Content="Modifier" HorizontalAlignment="Left" Margin="540,296,0,0" VerticalAlignment="Top" Width="155" Click="btnModifierEmp_Click"/>
                     <Button x:Name="btnAjouterEmp" Content="Ajouter" HorizontalAlignment="Left" Margin="540,272,0,0" VerticalAlignment="Top" Width="155" Click="btnAjouterEmp_Click"/>
                     <Button x:Name="btnSupprimerEmp" Content="Supprimer" HorizontalAlignment="Left" Margin="540,321,0,0" VerticalAlignment="Top" Width="155" Height="20" Click="btnSupprimerEmp_Click"/>
-                    <ComboBox x:Name="cboTypeEmp" SelectedValuePath="IdEmp" HorizontalAlignment="Left" Margin="544,146,0,0" VerticalAlignment="Top" Width="150"/>
+                    <ComboBox x:Name="cboTypeEmp" SelectedValuePath="IdEmp" HorizontalAlignment="Left" Margin="544,146,0,0" VerticalAlignment="Top" Width="150">
+                        <ComboBoxItem Content="Moniteur"/>
+                        <ComboBoxItem Content="Stagiaire"/>
+                        <ComboBoxItem Content="Marin"/>
+                        <ComboBoxItem Content="Secrétaire"/>
+                        <ComboBoxItem Content="Gérant"/>
+                    </ComboBox>
                 </Grid>
             </TabItem>
 

@@ -35,8 +35,10 @@ namespace Nemo
 
             dtgEmp.SelectedIndex = 0;
 
-            cboTypeEmp.ItemsSource = lesEmployee;
-            cboTypeEmp.SelectedValuePath = "IdEmp";
+            // cboTypeEmp.ItemsSource = lesEmployee;
+            // cboTypeEmp.SelectedValuePath = "IdEmp";
+           // cboTypeEmp.SelectedIndex = 0; // Définit la première valeur ("Moniteur") comme sélectionnée.
+
         }
 
 
@@ -51,7 +53,15 @@ namespace Nemo
                     txtNumEmp.Text = Convert.ToString(selectedEmp.IDEmp);
                     txtNomEmp.Text = selectedEmp.NomEmp;
                     txtPrenomEmp.Text = Convert.ToString(selectedEmp.PrenomEmp);
-                    cboTypeEmp.SelectedIndex = Convert.ToInt16(selectedEmp.TypeEmp);
+                   // cboTypeEmp.SelectedIndex = Convert.ToInt16(selectedEmp.TypeEmp);
+                    foreach (ComboBoxItem item in cboTypeEmp.Items)
+                    {
+                        if (item.Content.ToString() == selectedEmp.TypeEmp)
+                        {
+                            cboTypeEmp.SelectedItem = item;
+                            break;
+                        }
+                    }
                     txtMailEmp.Text = Convert.ToString(selectedEmp.MailEmp);
                     txtTelEmp.Text = Convert.ToString(selectedEmp.TelEmp);
                 }
@@ -60,6 +70,16 @@ namespace Nemo
 
                     Console.WriteLine("Erreur sur la mise à jour du formulaire lors du changement dans le Datagrid dtgContrat");
                 }
+            }
+            else
+            {
+                // Réinitialiser les champs si aucun élément n'est sélectionné
+                txtNumEmp.Text = string.Empty;
+                txtNomEmp.Text = string.Empty;
+                txtPrenomEmp.Text = string.Empty;
+                cboTypeEmp.SelectedIndex = -1;
+                txtMailEmp.Text = string.Empty;
+                txtTelEmp.Text = string.Empty;
             }
         }
 
