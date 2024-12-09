@@ -22,14 +22,14 @@ namespace Nemo
     public partial class MainWindow : Window
     {
 
-        List<Employee> lesEmployee = new List<Employee>();
+        List<Employer> lesEmployee = new List<Employer>();
 
         public MainWindow()
         {
             bdd.Initialize();
             InitializeComponent();
 
-            lesEmployee = bdd.SelectEmployee();
+            lesEmployee = bdd.SelectEmployer();
 
             dtgEmp.ItemsSource = lesEmployee;
 
@@ -43,38 +43,17 @@ namespace Nemo
         // ------------- Employer --------------
         private void dtgEmp_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-             selectedProspect = dtgProspect.SelectedItem as Prospect;
-            if (dtgProspect.SelectedItem != null)
+             Employer selectedEmp = dtgEmp.SelectedItem as Employer;
+            if (dtgEmp.SelectedItem != null)
             {
                 try
                 {
-                    //Remplissage des Textboxs avec les données de l'objet Contrat selectedContrat récupéré dans le Datagrid dtgContrat
-                    txtNumProspect.Text = Convert.ToString(selectedProspect.IdProspect);
-                    txtNomProspect.Text = selectedProspect.NomProspect;
-                    txtPrenomProspect.Text = Convert.ToString(selectedProspect.PrenomProspect);
-                    txtTelProspect.Text = Convert.ToString(selectedProspect.TelephoneProspect);
-                    txtMailProspect.Text = Convert.ToString(selectedProspect.EmailProspect);
-                    dtpCeationProspect.Text = Convert.ToString(selectedProspect.DateCreation);
-                    //cboProspectCommercial.SelectedIndex = selectedProspect.LeCommercial;
-                    cboProspectCommercial.SelectedValue = selectedProspect.LeCommercial.IdCommerciaux;
-
-                    // Sélection du pigiste concerné dans la Combobox
-                    //cboPigiste.SelectedItem = selectedContrat.PigisteContrat;
-
-                    int i = 0;
-                    bool trouve = false;
-
-                    while (i < cboProspectCommercial.Items.Count && trouve == false)
-                    {
-                        if (Convert.ToString(cboProspectCommercial.Items[i]) == Convert.ToString(selectedProspect.LeCommercial))
-                        {
-                            trouve = true;
-                            cboProspectCommercial.SelectedIndex = i;
-                        }
-                        i++;
-                    }
-
-
+                    txtNumEmp.Text = Convert.ToString(selectedEmp.IDEmp);
+                    txtNomEmp.Text = selectedEmp.NomEmp;
+                    txtPrenomEmp.Text = Convert.ToString(selectedEmp.PrenomEmp);
+                    cboTypeEmp.SelectedIndex = Convert.ToInt16(selectedEmp.TypeEmp);
+                    txtMailEmp.Text = Convert.ToString(selectedEmp.MailEmp);
+                    txtTelEmp.Text = Convert.ToString(selectedEmp.TelEmp);
                 }
                 catch (Exception)
                 {
@@ -86,77 +65,58 @@ namespace Nemo
 
         private void btnAjouterEmp_Click(object sender, RoutedEventArgs e)
         {
-            if (dtgProspect.SelectedIndex >= 0)
+            if (dtgEmp.SelectedIndex >= 0)
             {
-                // Récupération du Pigiste sélectionné dans le Combobox cboPigiste
-                Commerciaux ModifCommercial = cboProspectCommercial.SelectedItem as Commerciaux;
-
-
-                Prospect tmpProspect = new Prospect(0, txtNomProspect.Text, txtPrenomProspect.Text, txtTelProspect.Text, txtMailProspect.Text, dtpCeationProspect.Text, (Commerciaux)cboProspectCommercial.SelectedItem);
-                bdd.InsertProspect(tmpProspect.NomProspect, tmpProspect.PrenomProspect, tmpProspect.TelephoneProspect, tmpProspect.EmailProspect, tmpProspect.DateCreation, tmpProspect.LeCommercial);
+                Employer tmpEmp = new Employer(0, txtNomEmp.Text, txtPrenomEmp.Text, cboTypeEmp.Text, txtMailEmp.Text, Convert.ToDecimal(txtTelEmp.Text));
+                bdd.InsertEmployer(tmpEmp.IDEmp, tmpEmp.NomEmp, tmpEmp.PrenomEmp, tmpEmp.TypeEmp, tmpEmp.MailEmp, tmpEmp.TelEmp);
 
                 // Mets a jours pigistes
-                lesProspect = bdd.SelectProspect();
+                lesEmployee = bdd.SelectEmployer();
 
                 // Met à jour le DataGrid
-                dtgProspect.ItemsSource = lesProspect;
-                dtgProspect.SelectedIndex = 0;
-                dtgProspect.Items.Refresh();
+                dtgEmp.ItemsSource = lesEmployee;
+                dtgEmp.SelectedIndex = 0;
+                dtgEmp.Items.Refresh();
             }
         }
 
         private void btnModifierEmp_Click(object sender, RoutedEventArgs e)
         {
             //On recherche à quel indice de la collection se trouve l'object selectionné dans le datagrid
-            int indice = lesProspect.IndexOf((Prospect)dtgProspect.SelectedItem);
+            int indice = lesEmployee.IndexOf((Employer)dtgEmp.SelectedItem);
 
             // On change les propritétés de l'objet à l'indice trouvé. On ne change pas le numéro de magazine via l'interface, trop de risques d'erreurs en base de données
-            lesProspect.ElementAt(indice).NomProspect = txtNomProspect.Text;
-            lesProspect.ElementAt(indice).PrenomProspect = txtPrenomProspect.Text;
-            lesProspect.ElementAt(indice).TelephoneProspect = txtTelProspect.Text;
-            lesProspect.ElementAt(indice).EmailProspect = txtMailProspect.Text;
-            lesProspect.ElementAt(indice).DateCreation = dtpCeationProspect.Text;
-            lesProspect.ElementAt(indice).LeCommercial = (Commerciaux)cboProspectCommercial.SelectedItem;
+            lesEmployee.ElementAt(indice).NomEmp = txtNomEmp.Text;
+            lesEmployee.ElementAt(indice).PrenomEmp = txtPrenomEmp.Text;
+            lesEmployee.ElementAt(indice).TypeEmp = cboTypeEmp.Text;
+            lesEmployee.ElementAt(indice).MailEmp = txtMailEmp.Text;
+            lesEmployee.ElementAt(indice).TelEmp = Convert.ToDecimal(txtTelEmp.Text);
 
-            Prospect prospectModifie = lesProspect.ElementAt(indice);
-            bdd.UpdateProspect(
-                prospectModifie.IdProspect,
-                prospectModifie.NomProspect,
-                prospectModifie.PrenomProspect,
-                prospectModifie.TelephoneProspect,
-                prospectModifie.EmailProspect,
-                prospectModifie.DateCreation,
-                prospectModifie.LeCommercial.IdCommerciaux // Ici on passe l'ID du commercial
+            Employer empModifie = lesEmployee.ElementAt(indice);
+            bdd.UpdateEmployer(
+                empModifie.IDEmp,
+                empModifie.NomEmp,
+                empModifie.PrenomEmp,
+                empModifie.TypeEmp,
+                empModifie.NomEmp,
+                empModifie.TelEmp
             );
 
-            dtgProspect.Items.Refresh();
+            dtgEmp.Items.Refresh();
         }
 
         private void btnSupprimerEmp_Click(object sender, RoutedEventArgs e)
         {
-            //On recherche à quel indice de la collection se trouve l'object selectionné dans le datagrid
-            int indice = lesProspect.IndexOf((Prospect)dtgProspect.SelectedItem);
+            if (dtgEmp.SelectedIndex >= 0)
+            {
+                bdd.DeleteEmployer(Convert.ToInt16(txtNumEmp.Text));
 
-            // On change les propritétés de l'objet à l'indice trouvé. On ne change pas le numéro de magazine via l'interface, trop de risques d'erreurs en base de données
-            lesProspect.ElementAt(indice).NomProspect = txtNomProspect.Text;
-            lesProspect.ElementAt(indice).PrenomProspect = txtPrenomProspect.Text;
-            lesProspect.ElementAt(indice).TelephoneProspect = txtTelProspect.Text;
-            lesProspect.ElementAt(indice).EmailProspect = txtMailProspect.Text;
-            lesProspect.ElementAt(indice).DateCreation = dtpCeationProspect.Text;
-            lesProspect.ElementAt(indice).LeCommercial = (Commerciaux)cboProspectCommercial.SelectedItem;
+                // Actualise magazines dans l'application
+                lesEmployee = bdd.SelectEmployer();
 
-            Prospect prospectModifie = lesProspect.ElementAt(indice);
-            bdd.UpdateProspect(
-                prospectModifie.IdProspect,
-                prospectModifie.NomProspect,
-                prospectModifie.PrenomProspect,
-                prospectModifie.TelephoneProspect,
-                prospectModifie.EmailProspect,
-                prospectModifie.DateCreation,
-                prospectModifie.LeCommercial.IdCommerciaux // Ici on passe l'ID du commercial
-            );
-
-            dtgProspect.Items.Refresh();
+                dtgEmp.ItemsSource = lesEmployee;
+                dtgEmp.SelectedIndex = 0;
+            }
         }
 
 
